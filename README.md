@@ -5,6 +5,13 @@ Script to check the temparature from a sensor connected to a raspberry pi and se
 https://www.earth.li/~noodles/blog/2018/05/rpi-mqtt-temp.html
 
 # Instructions
+Enable 1 wire bus
+adding dtoverlay=w1-gpio line to /boot/config.txt
+
+Install pip3 and mqtt library
+sudo apt-get install python3-pip
+sudo pip3 install paho-mqtt
+
 Download mqtt-temp.py script.  Edit the address and credentials for the broker.  If needed add the path to the brokers CA (For self signed certs), otherwise remove tls parameter from publish.single tls={"ca_certs":""})
 
 Create /etc/systemd/system/mqtt-temp.service
