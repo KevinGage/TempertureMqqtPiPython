@@ -41,7 +41,7 @@ while True:
     temp = read_temp()
     if temp is not None:
       try:
-        publish.single(pub_topic, str(temp),
+        publish.single(pub_topic, 'temp,site=pi1 value='+str(temp),
                 hostname=Broker, port=8883,
                 auth=auth, tls={"ca_certs":""})
       except:
